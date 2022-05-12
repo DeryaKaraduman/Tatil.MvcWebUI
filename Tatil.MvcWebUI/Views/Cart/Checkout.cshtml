@@ -1,0 +1,51 @@
+﻿@model Tatil.MvcWebUI.Models.ShippingDetails
+@{
+    ViewBag.Title = "Checkout";
+}
+<style>
+.field-validation-error{color:#f00;}
+    .field-validation-valid{display:none;}
+    .input-validation-error{border:1px solid #f00; background-color:#fee;}
+    .validation-summary-errors{font-weight:bold;color:#f00}
+    .validation-summary-valid{display:none;}
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Rezervasyon Bilgisi</h2>
+            <hr />
+            <p>Lütfen Rezervasyon bilgilerinizi doldurunuz.</p>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+                <div class="form-group">
+                    <label>UserName</label>
+                    <div class="col-md-6">
+                        <span class="bg-danger">@User.Identity.Name</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>TC Kimlik Numarası</label>
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(x => x.TCKimlik, new { @class = "form-control" })
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+                    </div>
+
+                </div>
+                <div class="form-group mt-2">
+                    <label></label>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary">Onayla</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

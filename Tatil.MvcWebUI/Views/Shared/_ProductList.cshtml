@@ -1,0 +1,37 @@
+﻿@using Tatil.MvcWebUI.Entity;
+
+@model IEnumerable<Tatil.MvcWebUI.Models.ProductModel>
+
+
+
+<div class="row">
+
+    @foreach (var urun in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+
+                <img class="card-img-top" height="150" src="~/Upload/@urun.Image" alt="@urun.Name" />
+
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@urun.Id"> @urun.Name </a>
+                    </h5>
+                    <p class="card-text description">@urun.Description</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted product-price">
+                        <i class="fa fa-usd" aria-hidden="true"></i>
+                        @urun.Price
+                    </small>
+                    <a href="/Home/Details/@urun.Id" class="btn btn-primary btn-sm float-end">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        İncele
+                    </a>
+                </div>
+            </div>
+           
+
+        </div>
+    }
+    </div>

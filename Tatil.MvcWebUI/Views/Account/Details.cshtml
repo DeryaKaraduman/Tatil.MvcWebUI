@@ -1,0 +1,28 @@
+﻿@model Tatil.MvcWebUI.Models.OrderDetailsModel
+    @{
+        ViewBag.Title = "Details";
+    }
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Randevu Detay Bilgileri</h2>
+                <hr />
+
+                <dl class="row">
+                    <dt class="col-sm-3">İşlem Id</dt>
+                    <dd class="col-sm-9">@Model.OrderId</dd>
+                    <dt class="col-sm-3">Rezervasyon Numarası </dt>
+                    <dd class="col-sm-9">@Model.OrderNumber</dd>
+                    <dt class="col-sm-3">Toplam</dt>
+                    <dd class="col-sm-9">@Model.Total</dd>
+                    <dt class="col-sm-3">İşlem Tarihi</dt>
+                    <dd class="col-sm-9">@Model.OrderDate</dd>
+
+                  
+                </dl>
+            </div>
+            </div>
+        </div>
+

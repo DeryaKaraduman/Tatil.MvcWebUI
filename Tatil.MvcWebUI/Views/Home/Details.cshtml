@@ -1,0 +1,93 @@
+﻿@using Tatil.MvcWebUI.Entity;
+@model Product
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="~/Upload/@Model.Image" class="img-responsive w-100">
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>@Model.Name</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="badge bg-primary">En Yakın</span>
+                    <span class="badge bg-danger">06 Haziran</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="description">
+                        <font size="2">
+                            @Model.Description
+                        </font>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <h6 id="product-price">$@Model.Price</h6>
+
+
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+                    @using (Html.BeginForm("AddToCart","Cart"))
+                    {
+                        @Html.HiddenFor(i=>i.Id)
+                        <button type="submit" class="btn btn-success">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        Satın AL
+                       </button >
+                     }
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="bd-example">
+                    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">1.Gün</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">2.Gün</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">3.Gün</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <p><strong>1.Gün</strong> Sabiha Gökçen Havalimanı Dış Hatlar gidiş terminali Pegasus Hava Yolları kontuarı önünde siz değerli misafirlerimiz ile saat 10.30’da buluşma. Bagaj ve bilet işlemlerinin ardından Pegasus Hava Yolları’nın PC 1135 sayılı tarifeli seferi ile saat 16.20’de Paris’e uçuş. Yerel saat ile 13.20’de varış. Varışımızı takiben havalimanında bizleri bekleyen özel otobüsümüz ile panoramik şehir turu için hareket. Turumuzda Eyfel Kulesi, ünlü alışveriş caddesi Rivoli, Champs Elysees, Da Vinci şifresine konu olmuş Louvre Müzesi ve piramit, D’orsay Müzesi, Zafer Takı, Etoile Meydanı, Napolyon’un mezarı, Meclis binası, 3. Aleksandr köprüsü, 1990 yılı sanayi fuarı amaçlı yapılmış Grand Palace ve Petite Palace, 1789 Fransız devrimine konu olmuş Concorde Giyotin Meydanı, Madeleine Kilisesi ve Opera Garnier görülecek yerler arasındadır. Tur bitimi otele yerleşme ve serbest zaman. Akşam, arzu eden misafirlerimiz ekstra olarak düzenlenecek olan Paris by night (30 Euro) turuna katılabilirler. Tur sonrası otele transfer. Geceleme otelimizde.</p>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <p><strong>2.Gün</strong> Sabah kahvaltısının ardından serbest zaman. Arzu eden misafirlerimiz rehberimizin ekstra olarak düzenleyeceği Eiffel Kulesi, Seine Nehri tekne gezisi,+ Montmarte ressamlar tepesi,+ Sacre Coeur Bazilikası + Notre Dame Katedrali ve Fragonard Parfum muzesi turuna katılabilirler (85 Euro). Turumuzda Eiffel Kulesinin 2. Katına çıkarak bu büyülü kenti yukarıdan keşfetme şansına sahip olacaksınız. Sonrasında Seine nehri üzerinde 1 saatlik tekne gezisi ile adalar etrafında tur atıp Paris’i ve köprülerini nehirden görmenin keyfini çıkaracaksınız. Daha sonra Paris’in en eski ve en yüksek tepesi olan Montmarte’a teleferik ile çıkıyoruz, Sacre ve yanındaki ressamlarıyla ünlü, bohem yaşam tarzını soluyacağınız Tertre Meydanındaki alışveriş veya portrenizi yapacağınız serbest zamanımızın ardından romanlara, şarkılara ve filmlere konu olmuş meşhur Notre Dame katedralini ziyarete gidiyoruz. Katedral gezisi sonrasında Paris’in sıfır noktasında vereceğimiz resim molasının ardından Fragonard Parfum muzesi gezimiz olacak. Muze 1860 yilinda insa edilmis,muzede bizlere,tarihte ve gunumuze kadar parfumlerin nasil yapildigini,parfumun icadi rehber esliginde anlatiliyor,alisverisiniz icin serbest zaman sonrasinda otelimize dönüyoruz. Geceleme otelinizde.</p>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <p><strong>3.Gün</strong> Sabah kahvaltısının ardından Paris otelimizden ayrılarak Disneyland otelimize hareket. Her yaşa hitap eden aktiviteleri ile sizleri masalsı bir dünyaya götürecek olan Hayaletler evi, Mark Twain’in Gemisi, çılgın maden treni, Indiana Jones, Robinson’un evi, Karayip korsanları mağarası, bebekler dünyası, yıldızlar turu, 3 boyutlu sinema, uzaya yolculuk, denizaltı macerası gibi aktivitelerle keyifli vakit geçirebilirsiniz. Walt Disney Film Stüdyoları Parkında ise Aşçı Ratatuy Macerası, kalbinizi durduracak Hollywood Oteli Asansörü,Aerosmith Hız Treni,Stand Şov,Armageddon,Stüdyo tramvay turu gibi keyifli aktiviteler sizleri bekliyor. Disneyland bilet temini konusunda tur rehberimizden yardım alabilirsiniz. Geceleme otelinizde.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+

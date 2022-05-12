@@ -1,0 +1,26 @@
+﻿@using Tatil.MvcWebUI.Entity;
+
+@model IEnumerable< Tatil.MvcWebUI.Models.ProductModel >
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="container-fluid py-3">
+                <h1 class="display-5 bg-danger" >Yurt Dışı Turları</h1>
+                <p class="col-md-8 fs-4 text-danger">
+                    Dünyayı bir bilene sor! Yurt Dışı Tur, hayallerinizdeki destinasyonlara uzman ve deneyimli rehberler eşliğinde ulaşmanızı sağlıyor.
+                    En kapsamlı paket turlar, zengin içeriğiyle gideceğiniz yerin en özel noktalarını keşfetme olanağı sunuyor. Henüz tatil planınızı yapmadınız mı?
+                    Birbirinden farklı kategorideki turlarımıza göz atmaya başlayın!
+                </p>
+                
+            </div>
+
+
+        </div>
+</div>
+<div class="container">
+@Html.Partial("_ProductList",Model)
+</div>
+

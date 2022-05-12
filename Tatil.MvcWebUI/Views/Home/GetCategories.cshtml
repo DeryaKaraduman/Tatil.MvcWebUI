@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Tatil.MvcWebUI.Entity.Category>
+
+@{ 
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+<div class="list-group">
+    <a href="/Home/List" class="list-group-item list-group-item-action">
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        Tüm Kategoriler
+    </a>
+
+    @foreach (var item in Model)
+    {
+        if (selectedCategory != null)
+        {
+            if (item.Id == int.Parse(selectedCategory.ToString()))
+            {
+                <a href="/Home/List/@item.Id" class="list-group-item list-group-item-action active">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    @item.Name
+                </a>
+            }
+            else
+            {
+                <a href="/Home/List/@item.Id" class="list-group-item list-group-item-action ">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    @item.Name
+                </a>
+            }
+        }
+        else
+        {
+            <a href="/Home/List/@item.Id" class="list-group-item list-group-item-action">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                @item.Name
+            </a>
+        }
+
+
+
+
+    }
+
+
+</div>
